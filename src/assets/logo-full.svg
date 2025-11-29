@@ -1,0 +1,32 @@
+<!-- src/assets/logo-full.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" role="img" aria-labelledby="icwTitle icwDesc">
+  <title id="icwTitle">I Can Work Hub — ICW logo</title>
+  <desc id="icwDesc">Rounded green badge with a white skilled-worker silhouette and the text ICW with subtitle I Can Work Hub.</desc>
+
+  <!-- Background rounded rectangle -->
+  <rect x="0" y="0" width="640" height="200" rx="28" ry="28" fill="#2ECC71"/>
+
+  <!-- Left circular badge for silhouette -->
+  <g transform="translate(36,24)">
+    <rect x="0" y="0" width="152" height="152" rx="20" ry="20" fill="#FFFFFF"/>
+    <!-- inner circle to hold silhouette -->
+    <circle cx="76" cy="76" r="56" fill="#2ECC71"/>
+    <!-- silhouette (white) -->
+    <g transform="translate(76,76)" fill="#FFFFFF" stroke="none" aria-hidden="true">
+      <!-- head -->
+      <ellipse cx="0" cy="-10" rx="22" ry="22"/>
+      <!-- helmet brim -->
+      <path d="M-34 6 C-34 -2 -16 -12 0 -12 C16 -12 34 -2 34 6 Z"/>
+      <!-- shoulders / torso -->
+      <path d="M-46 40 C-46 24 -32 16 -6 16 L6 16 C32 16 46 24 46 40 Q28 32 6 32 L-6 32 Q-28 32 -46 40 Z"/>
+    </g>
+  </g>
+
+  <!-- Text group -->
+  <g transform="translate(220,46)" fill="#FFFFFF" font-family="Poppins, Inter, sans-serif">
+    <!-- Large ICW -->
+    <text x="0" y="64" font-size="96" font-weight="800" letter-spacing="2">ICW</text>
+    <!-- Subtitle -->
+    <text x="0" y="110" font-size="20" font-weight="600" fill="#FFFFFF" opacity="0.95">I Can Work Hub</text>
+  </g>
+</svg>

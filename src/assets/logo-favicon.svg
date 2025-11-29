@@ -1,0 +1,22 @@
+<!-- src/assets/logo-favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="favTitle favDesc">
+  <title id="favTitle">ICW icon</title>
+  <desc id="favDesc">Green rounded square with white skilled worker silhouette</desc>
+
+  <!-- Rounded green square -->
+  <rect width="64" height="64" rx="10" ry="10" fill="#2ECC71"/>
+
+  <!-- White inner circle -->
+  <circle cx="32" cy="28" r="16" fill="#FFFFFF"/>
+
+  <!-- Silhouette: head -->
+  <g transform="translate(32,28)" fill="#2ECC71" aria-hidden="true">
+    <ellipse cx="0" cy="-4" rx="6.6" ry="6.6"/>
+    <!-- helmet/visor -->
+    <path d="M-12 2c0-3 6-6 12-6s12 3 12 6z"/>
+    <!-- shoulders -->
+    <path d="M-18 18c0-5 18-10 36 0 0 0-6 6-18 6s-18-6-18-6z" transform="translate(-18,-6) scale(.5)"/>
+  </g>
+</svg>
+
+

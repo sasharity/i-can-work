@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I Can Work Hub | Post a Job</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/styles.css"/>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo-favicon.svg">
+</head>
+
+<body>
+
+    <!-- Dynamic Header -->
+    <header id="site-header"></header>
+
+    <main>
+        <section class="form-hero fade-in">
+            <div class="container">
+                <h1>Post a Job</h1>
+                <p class="lead">Fill in the details below to post your job and connect with skilled workers.</p>
+
+                <!-- Post Job Form -->
+                <form id="postJobForm" class="job-form">
+                    <div class="form-group">
+                        <label for="title">Job Title <span>*</span></label>
+                        <input type="text" id="title" name="title" placeholder="e.g. Electrician" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name <span>*</span></label>
+                        <input type="text" id="company" name="company" placeholder="e.g. Sasharity Ltd." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location <span>*</span></label>
+                        <input type="text" id="location" name="location" placeholder="State and Area" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="salary">Salary Range</label>
+                        <input type="text" id="salary" name="salary" placeholder="e.g. ₦150,000 - ₦700,000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Job Description <span>*</span></label>
+                        <textarea id="description" name="description" rows="5" placeholder="Describe the job..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Post Job</button>
+                </form>
+
+                <p id="successMessage" class="success-message"></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- JS -->
+    <script type="module" src="../js/post-job.js"></script>
+</body>
+
+</html>

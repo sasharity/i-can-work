@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Can Work | User Dashboard</title>
+
+    <link rel="stylesheet" href="/i-can-work/src/css/styles.css"/>
+
+</head>
+
+<body>
+    <!-- This will load the header dynamically -->
+    <header id="site-header"></header>
+    <main class="container fade-in">
+        <section class="dashboard">
+            <h1>Your Dashboard</h1>
+            <p class="lead">Welcome back! Here is your activity on I Can Work</p>
+
+            <!-- The user card -->
+            <div id="user-info" class="user-card">
+                <!-- This will be inserted with Js file -->
+            </div>
+    <!-- WORKER FEATURE: SAVED JOBS -->
+    <section>
+        <h2>Saved Jobs</h2>
+        <div id="saved-jobs" class="grid"></div>
+    </section>
+    
+    <!-- EMPLOYER FEATURE: POSTED JOBS -->
+    <section>
+        <h2>Your Posted Jobs</h2>
+        <div id="posted-jobs" class="grid"></div>
+    </section>
+    
+    </section>
+    
+    </main>
+    
+    <!-- Dynamic Footer -->
+    <footer id="site-footer"></footer>
+    
+    <script type="module" src="../js/users.js"></script>
+    
+    </body>
+    
+    </html>
+    

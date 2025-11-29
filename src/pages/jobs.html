@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I Can Work Hub | Job Listings</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo-favicon.svg">
+</head>
+
+<body>
+
+    <!-- Dynamic Header -->
+    <header id="site-header"></header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero fade-in">
+            <div class="container">
+                <h1>Find Your Next Opportunity</h1>
+                <p class="lead">
+                    Browse jobs, hire professionals, and take your career to the next level.
+                </p>
+
+                <!-- Search Bar -->
+                <div class="search" style="margin-top: 1.5rem;">
+                    <input id="jobSearch" class="input" type="text"
+                        placeholder="Search for jobs — e.g. plumber, electrician..." />
+                    <button class="btn" onclick="filterJobs()">Search Jobs</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOB LISTINGS SECTION -->
+        <section class="container py-lg">
+            <h2>Available Jobs</h2>
+            <p class="text-muted" style="margin-bottom: 1rem;">
+                Updated daily. Find the perfect job for your skills.
+            </p>
+
+            <!-- Job Cards -->
+            <div id="job-listings" class="grid">
+                <!-- Job cards injected dynamically -->
+            </div>
+
+            <!-- Skeleton loader -->
+            <div id="job-skeletons" class="grid">
+                <div class="card skeleton" style="height:80px;"></div>
+                <div class="card skeleton" style="height:80px;"></div>
+                <div class="card skeleton" style="height:80px;"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- JS -->
+    <script type="module" src="/js/jobs.js"></script>
+</body>
+
+</html>

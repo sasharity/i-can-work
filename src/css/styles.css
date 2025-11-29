@@ -1,0 +1,463 @@
+/* ===========================
+   I CAN WORK HUB - styles.css
+   Full Professional Stylesheet
+   Using Proposal Color Palette
+   =========================== */
+
+/* ---------------------------
+   1. CSS VARIABLES (BRAND)
+   --------------------------- */
+:root {
+  /* Primary Colors */
+  --green: #2ECC71;
+  --green-light: #A5E5C5;
+
+  /* Neutrals */
+  --white: #FFFFFF;
+  --gray: #7F8C8D;
+  --gray-light: #F4F6F8;
+  --dark: #2C3E50;
+
+  /* Utility */
+  --danger: #E74C3C;
+  --success: #2ECC71;
+  --shadow-1: 0 4px 10px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  /* Fonts */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Spacing */
+  --space-xs: .25rem;
+  --space-sm: .5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+}
+
+/* Remove animation for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------------------------
+   2. RESET & BASE
+   --------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  font-family: var(--font-body);
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--green);
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  margin: 0 0 .6rem 0;
+  color: var(--dark);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+/* ---------------------------
+   3. LAYOUT UTILITIES
+   --------------------------- */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* ---------------------------
+   4. HEADER
+   --------------------------- */
+header.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-light);
+  padding: var(--space-sm) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.brand .logo {
+  width: 40px;
+  height: 40px;
+  background: var(--green);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a:hover {
+  color: var(--dark);
+}
+
+/* ---------------------------
+   5. HERO SECTION
+   --------------------------- */
+.hero {
+  padding: 4rem 0;
+  background: var(--gray-light);
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: .5rem;
+}
+
+.hero p {
+  color: var(--gray);
+}
+
+.cta-btn {
+  background: var(--green);
+  color: white;
+  padding: .8rem 1.2rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  display: inline-block;
+  transition: transform .2s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------------------------
+   6. JOB CARDS
+   --------------------------- */
+.job-card {
+  background: white;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-2);
+}
+
+.job-meta {
+  color: var(--gray);
+  font-size: .9rem;
+}
+
+/* ---------------------------
+   7. FORMS
+   --------------------------- */
+.input,
+select,
+textarea {
+  width: 100%;
+  padding: .7rem;
+  background: white;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+}
+
+.input:focus {
+  border-color: var(--green);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15);
+}
+
+.btn {
+  background: var(--green);
+  color: white;
+  padding: .8rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.btn:hover {
+  opacity: .9;
+}
+
+/* ---------------------------
+   8. ANIMATIONS
+   --------------------------- */
+
+/* Fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn .6s ease-out;
+}
+
+/* Skeleton Loader */
+.skeleton {
+  height: 14px;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, #eee, #ddd, #eee);
+  background-size: 200%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Spinner */
+.loader {
+  border: 4px solid #eee;
+  border-top: 4px solid var(--green);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Confetti */
+.confetti {
+  width: 8px;
+  height: 12px;
+  background: var(--green);
+  position: absolute;
+  top: -10px;
+  animation: fall 1s ease-out forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(150px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* ---------------------------
+   9. FOOTER
+   --------------------------- */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 1.4rem 0;
+  text-align: center;
+  font-size: .9rem;
+}
+
+/* JOB LISTINGS GRID */
+#job-listings, #job-skeletons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* JOB CARD */
+#job-listings .card, #job-skeletons .card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#job-listings .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* BUTTON */
+#job-listings .btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #4a90e2;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#job-listings .btn:hover {
+  background: #357ab8;
+  transform: translateY(-2px);
+}
+
+/* SKELETON LOADER */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 12px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* HERO SECTION ADJUSTMENT */
+.jobs-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* RESPONSIVE TEXT */
+.jobs-hero h1 {
+  font-size: 2rem;
+}
+
+.jobs-hero .lead {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .jobs-hero h1 {
+    font-size: 2.8rem;
+  }
+  .jobs-hero .lead {
+    font-size: 1.2rem;
+  }
+}
+
+/* CSS for the post-job page */
+.job-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.success-message {
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Styling for the dashboard/user page */
+.dashboard h1 {
+    margin-bottom: 0.5rem;
+}
+
+.user-card .card {
+    padding: 1.5rem;
+    background: #ac93932e;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.dashboard section {
+    margin-top: 2rem;
+}
