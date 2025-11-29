@@ -11,8 +11,8 @@ function renderWithTemplate(template, parent) {
 
 // Load the header and footer
 export async function loadHeaderFooter() {
-    const header = await loadTemplate("/partials/header.html");
-    const footer = await loadTemplate("/partials/footer.html");
+    const header = await loadTemplate("partials/header.html");
+    const footer = await loadTemplate("partials/footer.html");
 
     renderWithTemplate(header, document.getElementById("site-header"));
     renderWithTemplate(footer, document.getElementById("site-footer"))
