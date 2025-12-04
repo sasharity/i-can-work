@@ -1,3 +1,6 @@
+import { loadHeaderFooter } from "./utils.js";
+loadHeaderFooter();
+
 // Sample static jobs data
 const jobs = [
     { title: "Plumber", company: "PipeWorks Ltd.", location: "Lagos", salary: "₦40,000 - ₦60,000" },
@@ -43,3 +46,10 @@ window.applyJob = function (title) {
 document.addEventListener("DOMContentLoaded", () => {
     renderJobs(jobs);
 });
+
+// To render a single job card template
+function createJobCard(job) {
+    return `
+    <div class="card job-card">
+    `
+}

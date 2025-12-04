@@ -1,3 +1,6 @@
+import { loadHeaderFooter } from "./utils.js";
+loadHeaderFooter();
+
 const postJobForm = document.getElementById("postJobForm");
 const successMessage = document.getElementById("successMessage")
 

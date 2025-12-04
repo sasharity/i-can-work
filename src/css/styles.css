@@ -1,12 +1,12 @@
-/* ===========================
+/* 
    I CAN WORK HUB - styles.css
    Full Professional Stylesheet
    Using Proposal Color Palette
-   =========================== */
+    */
 
-/* ---------------------------
+/* 
    1. CSS VARIABLES (BRAND)
-   --------------------------- */
+    */
 :root {
   /* Primary Colors */
   --green: #2ECC71;
@@ -48,9 +48,9 @@
   }
 }
 
-/* ---------------------------
+/* 
    2. RESET & BASE
-   --------------------------- */
+    */
 *,
 *::before,
 *::after {
@@ -89,9 +89,9 @@ h1 {
   font-size: 2rem;
 }
 
-/* ---------------------------
+/* 
    3. LAYOUT UTILITIES
-   --------------------------- */
+    */
 .container {
   width: 100%;
   max-width: 1100px;
@@ -108,9 +108,9 @@ h1 {
   gap: 1rem;
 }
 
-/* ---------------------------
+/* 
    4. HEADER
-   --------------------------- */
+    */
 header.site-header {
   background: var(--white);
   border-bottom: 1px solid var(--gray-light);
@@ -155,9 +155,9 @@ header.site-header {
   color: var(--dark);
 }
 
-/* ---------------------------
+/* 
    5. HERO SECTION
-   --------------------------- */
+    */
 .hero {
   padding: 4rem 0;
   background: var(--gray-light);
@@ -186,9 +186,9 @@ header.site-header {
   transform: translateY(-4px);
 }
 
-/* ---------------------------
+/* 
    6. JOB CARDS
-   --------------------------- */
+    */
 .job-card {
   background: white;
   padding: var(--space-md);
@@ -210,9 +210,9 @@ header.site-header {
   font-size: .9rem;
 }
 
-/* ---------------------------
+/* 
    7. FORMS
-   --------------------------- */
+    */
 .input,
 select,
 textarea {
@@ -245,9 +245,9 @@ textarea {
   opacity: .9;
 }
 
-/* ---------------------------
+/* 
    8. ANIMATIONS
-   --------------------------- */
+    */
 
 /* Fade-in */
 @keyframes fadeIn {
@@ -319,9 +319,9 @@ textarea {
   }
 }
 
-/* ---------------------------
+/* 
    9. FOOTER
-   --------------------------- */
+    */
 footer {
   background: var(--dark);
   color: white;
@@ -460,4 +460,31 @@ footer {
 
 .dashboard section {
     margin-top: 2rem;
+}
+
+.workers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.worker-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transition: transform .25s ease;
+}
+
+.worker-card:hover {
+  transform: translateY(-4px);
+}
+
+.worker-card img {
+  width: 100%;
+  border-radius: 10px;
 }

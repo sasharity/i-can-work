@@ -7,20 +7,32 @@
   <title>I Can Work Hub | Find Jobs & Skilled Workers in Nigeria</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="src/css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/src/assets/logo-favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-favicon.svg">
 </head>
 
 <body>
 
-  <!-- Dynamic Header -->
-  <header id="site-header"></header>
+  <header class="divider" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/index.html" aria-label="I Can Work Hub home">
+        <img src="/assets/logo-full.svg" alt="I Can Work Hub Logo" width="220" height="70">
+      </a>
+  
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="/pages/jobs.html">Jobs</a>
+        <a href="/pages/post-job.html">Post a Job</a>
+        <a href="/pages/users.html">Dashboard</a>
+        <a href="/pages/users-directory">Users' Directory</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
 
@@ -68,15 +80,32 @@
         <div class="card skeleton" style="height:80px;"></div>
       </div>
 
+      <section class="py-lg container fade-in">
+        <h2>Featured Workers</h2>
+        <p class="text-muted">Browse skilled professionals across Nigeria.</p>
+      
+        <div id="featured-workers" class="grid"></div>
+      
+        <!-- skeleton -->
+        <div id="workers-skeleton" class="grid">
+          <div class="card skeleton" style="height:90px;"></div>
+          <div class="card skeleton" style="height:90px;"></div>
+          <div class="card skeleton" style="height:90px;"></div>
+        </div>
+      
+        <div style="margin-top: 1rem;">
+          <a class="cta-btn" href="/src/pages/users-directory.html">See All Users</a>
+        </div>
+      </section>
+
+
     </section>
 
   </main>
 
-  <!-- Dynamic Footer -->
-  <footer id="site-footer"></footer>
-
+  <footer id ="site-footer"></footer>
   <!-- JS -->
-  <script type="module" src="src/js/main.js"></script>
+  <script type="module" src="/js/main.js"></script>
 
 </body>
 

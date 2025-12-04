@@ -1,3 +1,6 @@
+import { loadHeaderFooter } from "./utils.js";
+loadHeaderFooter();
+
 // Get stored user OR create a demo user if none exists yet
 let user = JSON.parse(localStorage.getItem("user")) || {
     username: "Guest User",
@@ -62,3 +65,47 @@ if (postedJobs.length === 0) {
     `)
         .join("");
 }
+
+// RANDOM USER API: users Container 
+async function loadWorkerPreviews() {
+  const previewContainer = document.getElementById("usersContainer");
+  if (!previewContainer) return; // safety
+
+  try {
+    // Fetch 6 random users; results parameter allows multiple users. (See docs.) :contentReference[oaicite:0]{index=0}
+    const response = await fetch("https://randomuser.me/api/?results=6");
+    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+    const data = await response.json();
+    console.log(data)
+
+    // Map into a simpler worker object
+    const workers = data.results.map(user => ({
+      fullName: `${user.name.first} ${user.name.last}`,
+      avatar: user.picture.medium || "", // fallback if missing
+      skills: ["Plumbing", "Electrician", "Tailoring", "Carpentry", "Hair Styling"][Math.floor(Math.random() * 5)],
+      email: user.email,
+      location: `${user.location.city}, ${user.location.state || user.location.country}`,
+    }));
+
+    // Render worker cards
+    previewContainer.innerHTML = workers
+      .map(w => `
+        <div class="user-card">
+          <img src="${w.avatar}" alt="${w.fullName} photo">
+          <h4>${w.fullName}</h4>
+          <p><strong>Skill:</strong> ${w.skills}</p>
+          <p><strong>Location:</strong> ${w.location}</p>
+          <p><strong>Email:</strong> ${w.email}</p>
+        </div>
+      `)
+      .join("");
+
+  } catch (err) {
+    console.error("Error loading users Container:", err);
+    // Optional fallback message
+    previewContainer.innerHTML = `<p class="text-muted">Unable to load users Container.</p>`;
+  }
+}
+
+// Run it when the page loads
+loadWorkerPreviews();
