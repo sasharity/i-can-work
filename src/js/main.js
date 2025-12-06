@@ -237,17 +237,26 @@ async function loadFeaturedWorkers() {
 //   `;
 // }
 
-const response = await fetch(
-    "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&offset=0",
-    {
-        headers: {
-            "X-RapidAPI-Key": "c7a338044dmsh69ffbce3033c61bp1bf90fjsn827485efc90a'",
-            "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com"
-        }
+async function loadCities() {
+    try {
+        const response = await fetch(
+            "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&offset=0",
+            {
+                headers: {
+                    "X-RapidAPI-Key": "c7a338044dmsh69ffbce3033c61bp1bf90fjsn827485efc90a",
+                    "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com"
+                }
+            }
+        );
+
+        const data = await response.json();
+        console.log("Cities:", data.data);
+    } catch (err) {
+        console.error("Error fetching cities:", err);
     }
-);
-const data = await response.json();
-console.log(data.data);  // list of cities
+}
+
+loadCities();
 
 
 

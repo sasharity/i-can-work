@@ -21,6 +21,7 @@ export default defineConfig({
         main: resolve(__dirname, "src/index.html"),
         jobs: resolve(__dirname, "src/pages/jobs.html"),
         post_jobs: resolve(__dirname, "src/pages/post_jobs.html"),
+        users: resolve(__dirname, "src/pages/users.html"),
         users_directory: resolve(__dirname, "src/pages/users_directory.html"),
         join: resolve(__dirname, "src/pages/join.html"),
       },
