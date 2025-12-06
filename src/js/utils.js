@@ -16,7 +16,7 @@ const headerTemplate = `
 <div class="container header-inner">
  <div class="container header-inner">
     <a class="brand" href="/index.html" aria-label="I Can Work Hub home">
-        <img src="../assets/logo-full.svg" alt="I Can Work Hub Log" width="220" height="70">
+        <img src="/logo-full.svg" alt="I Can Work Hub Logo" width="220" height="70">
     </a>
 
     <nav class="nav" role="navigation" aria-label="Main navigation">
