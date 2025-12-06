@@ -48,23 +48,37 @@ if (savedJobs.length === 0) {
 }
 
 // Load posted jobs (for employers)
-const postedJobsContainer = document.getElementById("posted-jobs");
-let postedJobs = JSON.parse(localStorage.getItem("jobs")) || [];
+export async function loadFeaturedJobs() {
+  try {
+    const res = await fetch("/data/jobs.json");
+    const jobs = await res.json();
 
-if (postedJobs.length === 0) {
-    postedJobsContainer.innerHTML = `<p class="text-muted">No posted jobs yet.</p>`;
-} else {
-    postedJobsContainer.innerHTML = postedJobs
-        .map(job => `
+    displayJobs(jobs);
+  } catch (err) {
+    console.error("Error loading jobs:", err);
+  }
+
+}
+function displayJobs(jobs) {
+  const container = document.getElementById("posted-jobs");
+  if (!container) return;
+
+  if (user.role !== "employer") {
+    container.innerHTML = `<p class="text-muted">No posted jobs. Only employers can post jobs.</p>`;
+    return;
+  }
+
+  container.innerHTML = jobs
+    .map(job => `
       <div class="card">
         <h4>${job.title}</h4>
         <p>${job.company}</p>
         <p>${job.location}</p>
-        <p>${job.salary}</p>
       </div>
     `)
-        .join("");
+    .join("");
 }
+
 
 // RANDOM USER API: users Container 
 async function loadWorkerPreviews() {
@@ -109,3 +123,5 @@ async function loadWorkerPreviews() {
 
 // Run it when the page loads
 loadWorkerPreviews();
+loadFeaturedJobs();
+

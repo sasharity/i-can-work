@@ -166,6 +166,15 @@ header.site-header {
 .hero h1 {
   font-size: 2.4rem;
   margin-bottom: .5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 5s ease-out forwards;
+}
+@keyframes heroReveal {
+  to {
+    opacity: 3;
+    transform: translateY(0);
+  }
 }
 
 .hero p {
@@ -371,8 +380,21 @@ footer {
   transform: translateY(-2px);
 }
 
+#featured-jobs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+#featured-workers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
 /* SKELETON LOADER */
-.skeleton {
+/* .skeleton {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
@@ -382,7 +404,7 @@ footer {
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
-}
+} */
 
 /* HERO SECTION ADJUSTMENT */
 .jobs-hero {
@@ -399,14 +421,14 @@ footer {
   font-size: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) { */
   .jobs-hero h1 {
     font-size: 2.8rem;
   }
   .jobs-hero .lead {
     font-size: 1.2rem;
   }
-}
+/* } */
 
 /* CSS for the post-job page */
 .job-form {
@@ -487,4 +509,93 @@ footer {
 .worker-card img {
   width: 100%;
   border-radius: 10px;
+}
+
+/* Because this web app can be used on any type of device, the following CSS lines will be added for responsiveness and accessibility. It will also implement mobile, tab and desktop views */
+
+
+/* ---------- MOBILE GLOBAL FIXES ---------- */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  header.site-header .header-inner {
+    flex-direction: column;
+    gap: .6rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .8rem;
+  }
+
+  .job-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer {
+    font-size: .8rem;
+    padding: 1rem;
+  }
+}
+
+/* ---------- TABLET RESPONSIVENESS ---------- */
+@media (min-width: 600px) and (max-width: 900px) {
+  .header-inner {
+    padding: 0 .5rem;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  #job-listings,
+  #job-skeletons {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .workers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+/* ---------- DESKTOP MID-RANGE ---------- */
+@media (min-width: 900px) and (max-width: 1400px) {
+  .hero {
+    padding: 5rem 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .job-card {
+    padding: 1.5rem 2rem;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
 }

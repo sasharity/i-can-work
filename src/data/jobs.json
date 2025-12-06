@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "title": "Front-End Developer",
+        "company": "TechWave Nigeria",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦900,000/month",
+        "description": "Build and maintain responsive websites using HTML, CSS, JavaScript.",
+        "posted": "2025-01-15"
+    },
+    {
+        "id": 2,
+        "title": "Backend Developer",
+        "company": "CodeFusion Labs",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦1,200,000/month",
+        "description": "Develop and maintain backend APIs using Node.js, Express, and databases.",
+        "posted": "2025-01-14"
+    },
+    {
+        "id": 3,
+        "title": "Mobile App Developer",
+        "company": "Appify Solutions",
+        "location": "Abuja, Nigeria",
+        "type": "Full-time",
+        "salary": "₦1,400,000/month",
+        "description": "Build and deploy high-quality mobile apps using Flutter.",
+        "posted": "2025-01-13"
+    },
+    {
+        "id": 4,
+        "title": "Senior Software Engineer",
+        "company": "DigitalBridge Networks",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦2,500,000/month",
+        "description": "Lead engineering teams, design scalable architecture, manage deployments.",
+        "posted": "2025-01-11"
+    },
+    {
+        "id": 5,
+        "title": "Data Analyst",
+        "company": "Insight Technologies",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦700,000/month",
+        "description": "Analyze business data and produce actionable insights.",
+        "posted": "2025-01-10"
+    },
+    {
+        "id": 6,
+        "title": "Data Scientist",
+        "company": "AI Solutions Hub",
+        "location": "Abuja, Nigeria",
+        "type": "Remote",
+        "salary": "₦1,800,000/month",
+        "description": "Use machine learning techniques to solve data problems.",
+        "posted": "2025-01-12"
+    },
+    {
+        "id": 7,
+        "title": "Cloud Engineer",
+        "company": "SkyNet Cloud Services",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦1,600,000/month",
+        "description": "Deploy and maintain cloud infrastructure on AWS and Azure.",
+        "posted": "2025-01-14"
+    },
+    {
+        "id": 8,
+        "title": "Cybersecurity Analyst",
+        "company": "SecureNet Africa",
+        "location": "Port Harcourt, Nigeria",
+        "type": "Full-time",
+        "salary": "₦950,000/month",
+        "description": "Monitor systems, prevent attacks, and manage security protocols.",
+        "posted": "2025-01-09"
+    },
+    {
+        "id": 9,
+        "title": "Network Engineer",
+        "company": "Connect360",
+        "location": "Abuja, Nigeria",
+        "type": "Full-time",
+        "salary": "₦850,000/month",
+        "description": "Install and maintain network systems and communication devices.",
+        "posted": "2025-01-07"
+    },
+    {
+        "id": 10,
+        "title": "UI/UX Designer",
+        "company": "DesignLab Studio",
+        "location": "Lagos, Nigeria",
+        "type": "Remote",
+        "salary": "₦600,000/month",
+        "description": "Design intuitive user interfaces and user experiences for digital products.",
+        "posted": "2025-01-11"
+    },
+    {
+        "id": 11,
+        "title": "Product Manager",
+        "company": "BlueStone Consulting",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦2,000,000/month",
+        "description": "Lead product strategy, roadmap, and cross-functional teams.",
+        "posted": "2025-01-13"
+    },
+    {
+        "id": 12,
+        "title": "Project Manager",
+        "company": "BuildRight Construction",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦1,500,000/month",
+        "description": "Supervise construction projects and coordinate team activities.",
+        "posted": "2025-01-13"
+    },
+    {
+        "id": 13,
+        "title": "Nurse Practitioner",
+        "company": "St. Catherine Medical Center",
+        "location": "Abuja, Nigeria",
+        "type": "Full-time",
+        "salary": "₦750,000/month",
+        "description": "Provide primary care and assist with clinical operations.",
+        "posted": "2025-01-08"
+    },
+    {
+        "id": 14,
+        "title": "Medical Doctor",
+        "company": "PrimeCare Hospital",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦3,000,000/month",
+        "description": "Diagnose, treat, and manage patients across departments.",
+        "posted": "2025-01-12"
+    },
+    {
+        "id": 15,
+        "title": "Pharmacist",
+        "company": "HealthPlus Nigeria",
+        "location": "Ibadan, Nigeria",
+        "type": "Full-time",
+        "salary": "₦600,000/month",
+        "description": "Dispense medication and advise patients on drug use.",
+        "posted": "2025-01-10"
+    },
+    {
+        "id": 16,
+        "title": "Radiographer",
+        "company": "MedScan Diagnostics",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦900,000/month",
+        "description": "Perform X-ray, CT, and MRI imaging procedures.",
+        "posted": "2025-01-11"
+    },
+    {
+        "id": 17,
+        "title": "Accountant",
+        "company": "FinTrust Finance",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦520,000/month",
+        "description": "Manage financial records, invoices, and company accounts.",
+        "posted": "2025-01-07"
+    },
+    {
+        "id": 18,
+        "title": "Financial Analyst",
+        "company": "CapitalCore Investments",
+        "location": "Abuja, Nigeria",
+        "type": "Full-time",
+        "salary": "₦1,300,000/month",
+        "description": "Analyze market data and advise on investment strategies.",
+        "posted": "2025-01-10"
+    },
+    {
+        "id": 19,
+        "title": "Business Development Manager",
+        "company": "MegaMart Nigeria",
+        "location": "Benin City, Nigeria",
+        "type": "Full-time",
+        "salary": "₦850,000/month",
+        "description": "Identify growth opportunities and expand company partnerships.",
+        "posted": "2025-01-15"
+    },
+    {
+        "id": 20,
+        "title": "HR Manager",
+        "company": "NextGen Industries",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦950,000/month",
+        "description": "Oversee recruitment, employee relations, and HR policies.",
+        "posted": "2025-01-06"
+    },
+    {
+        "id": 21,
+        "title": "Operations Manager",
+        "company": "TransRoute Transport",
+        "location": "Port Harcourt, Nigeria",
+        "type": "Full-time",
+        "salary": "₦1,100,000/month",
+        "description": "Manage daily operations and workforce strategies.",
+        "posted": "2025-01-15"
+    },
+    {
+        "id": 22,
+        "title": "Digital Marketer",
+        "company": "TrendMax Media",
+        "location": "Remote",
+        "type": "Remote",
+        "salary": "₦650,000/month",
+        "description": "Plan and execute digital marketing campaigns.",
+        "posted": "2025-01-13"
+    },
+    {
+        "id": 23,
+        "title": "Social Media Manager",
+        "company": "BrandHive Africa",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦520,000/month",
+        "description": "Manage social media accounts and create engaging content.",
+        "posted": "2025-01-12"
+    },
+    {
+        "id": 24,
+        "title": "Content Strategist",
+        "company": "StoryHub Media",
+        "location": "Remote",
+        "type": "Remote",
+        "salary": "₦550,000/month",
+        "description": "Develop content plans for digital platforms.",
+        "posted": "2025-01-14"
+    },
+    {
+        "id": 25,
+        "title": "Legal Officer",
+        "company": "JusticeWorks Legal",
+        "location": "Abuja, Nigeria",
+        "type": "Full-time",
+        "salary": "₦870,000/month",
+        "description": "Draft legal documents and ensure regulatory compliance.",
+        "posted": "2025-01-09"
+    },
+    {
+        "id": 26,
+        "title": "Electrical Engineer",
+        "company": "PowerGrid Nigeria",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦1,300,000/month",
+        "description": "Design and maintain electrical systems and power equipment.",
+        "posted": "2025-01-11"
+    },
+    {
+        "id": 27,
+        "title": "Mechanical Engineer",
+        "company": "SteelMax Manufacturing",
+        "location": "Kaduna, Nigeria",
+        "type": "Full-time",
+        "salary": "₦1,100,000/month",
+        "description": "Oversee mechanical system design and production processes.",
+        "posted": "2025-01-10"
+    },
+    {
+        "id": 28,
+        "title": "Logistics Manager",
+        "company": "QuickMove Logistics",
+        "location": "Abuja, Nigeria",
+        "type": "Full-time",
+        "salary": "₦650,000/month",
+        "description": "Coordinate shipments, supply chain, and warehouse operations.",
+        "posted": "2025-01-12"
+    },
+    {
+        "id": 29,
+        "title": "Chief Technology Officer (CTO)",
+        "company": "NovaTech Digital",
+        "location": "Lagos, Nigeria",
+        "type": "Full-time",
+        "salary": "₦3,000,000/month",
+        "description": "Drive technical strategy, supervise engineering, and manage innovation.",
+        "posted": "2025-01-10"
+    },
+    {
+        "id": 30,
+        "title": "AI Engineer",
+        "company": "FutureAI Systems",
+        "location": "Remote",
+        "type": "Full-time",
+        "salary": "₦2,200,000/month",
+        "description": "Build AI models, automation tools, and intelligent systems.",
+        "posted": "2025-01-11"
+    }
+]

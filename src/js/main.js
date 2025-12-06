@@ -1,5 +1,6 @@
 import { loadHeaderFooter } from "./utils.js";
 
+
 loadHeaderFooter();
 
 
@@ -12,48 +13,94 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (path.endsWith("index.html") || path === "/") {
         loadFeaturedJobs();
+        loadFeaturedWorkers();
     }
 
 
     // USERS-DIRECTORY.HTML: Workers & Employers
-    if (path.endsWith("users-directory.html")) {
+    if (path.endsWith("users_directory.html")) {
         loadUsersDirectory();
         setupTabs();
     }
 });
 
-// FUNCTION: Load Featured Jobs (index.html)
-async function loadFeaturedJobs() {
-    const featuredContainer = document.getElementById("featured-jobs");
-    const skeletons = document.getElementById("featured-skeletons");
 
-    if (!featuredContainer || !skeletons) return;
+// // Render a single job card template
+// function createJobCard(job) {
+//     return `
+//     <div class="card job-card">
+//       <h3>${job.title}</h3>
+//       <p><strong>Company:</strong> ${job.company}</p>
+//       <p><strong>Location:</strong> ${job.location}</p>
+//       <p><strong>Salary:</strong> ${job.salary || 'Not specified'}</p>
+//       <button class="btn save-job-btn" data-job-id="${job.id}">Save Job</button>
+//     </div>
+//   `;
+// }
+// ;
+
+// --- Featured Jobs ---
+async function loadFeaturedJobs() {
+    const container = document.getElementById("featured-jobs");
+    const skeletons = document.getElementById("featured-skeletons");
+    if (!container || !skeletons) return;
 
     skeletons.style.display = "grid";
 
     try {
-        const response = await fetch("https://api.example.com/jobs"); // Replace with your API
-        const jobs = await response.json();
+        
+        const jobs = [
+            {
+                title: "Front-End Developer",
+                company: "NovaTech Digital",
+                location: "Lagos",
+                salary: "₦900,000"
+            },
+            {
+                title: "Registered Nurse",
+                company: "St. Catherine Medical Center",
+                location: "Abuja",
+                salary: "₦650,000"
+            },
+            {
+                title: "Project Manager",
+                company: "BlueStone Consulting",
+                location: "Port Harcourt",
+                salary: "₦1,500,000"
+            },
+            {
+                title: "Data Analyst",
+                company: "Insight Analytics Ltd",
+                location: "Lagos",
+                salary: "₦700,000"
+            },
+            {
+                title: "Backend Developer",
+                company: "CloudHub Technologies",
+                location: "Abuja",
+                salary: "₦1,200,000"
+            }
+        ];
 
-        featuredContainer.innerHTML = jobs
-            .map(
-                job => `
-      <div class="card">
-        <h3>${job.title}</h3>
-        <p><strong>Company:</strong> ${job.company}</p>
-        <p><strong>Location:</strong> ${job.location}</p>
-        <p><strong>Salary:</strong> ${job.salary || "Not specified"}</p>
-      </div>
-      `
-            )
-            .join("");
+
+        container.innerHTML = jobs
+            .map(job => `
+            <div class="card job-card">
+                <h3>${job.title}</h3>
+                <p><strong>Company:</strong> ${job.company}</p>
+                <p><strong>Location:</strong> ${job.location}</p>
+                <p><strong>Salary:</strong> ${job.salary}</p>
+            </div>
+        `).join("");
     } catch (err) {
         console.error("Error loading jobs:", err);
-        featuredContainer.innerHTML = "<p>Unable to load jobs at this time.</p>";
+        container.innerHTML = "<p>Unable to load jobs at this time.</p>";
     } finally {
         skeletons.style.display = "none";
     }
 }
+
+
 
 // FUNCTION: Load Users Directory
 async function loadUsersDirectory() {
@@ -140,3 +187,94 @@ function setupTabs() {
         });
     });
 }
+
+// --- Featured Workers ---
+async function loadFeaturedWorkers() {
+    const container = document.getElementById("featured-workers");
+    const skeletons = document.getElementById("workers-skeleton");
+    if (!container || !skeletons) return;
+
+    skeletons.style.display = "grid";
+
+    try {
+        const response = await fetch("https://randomuser.me/api/?results=6&nat=ng");
+        const data = await response.json();
+        const workers = data.results.map(user => ({
+            fullName: `${user.name.first} ${user.name.last}`,
+            avatar: user.picture.medium,
+            role: "Worker",
+            skills: ["Plumbing", "Electrician", "Tailoring", "Carpentry"][Math.floor(Math.random() * 4)],
+            location: `${user.location.city}, ${user.location.state}`,
+        }));
+
+        container.innerHTML = workers.map(worker => `
+            <div class="user-card">
+                <img src="${worker.avatar}" alt="${worker.fullName} photo">
+                <h3>${worker.fullName}</h3>
+                <p><strong>Role:</strong> ${worker.role}</p>
+                <p><strong>Skill:</strong> ${worker.skills}</p>
+                <p><strong>Location:</strong> ${worker.location}</p>
+            </div>
+        `).join("");
+    } catch (err) {
+        console.error("Error loading workers:", err);
+        container.innerHTML = "<p>Unable to load workers at this time.</p>";
+    } finally {
+        skeletons.style.display = "none";
+    }
+}
+
+// // Render a single job card template
+// function createJobCard(job) {
+//     return `
+//     <div class="card job-card">
+//       <h3>${job.title}</h3>
+//       <p><strong>Company:</strong> ${job.company}</p>
+//       <p><strong>Location:</strong> ${job.location}</p>
+//       <p><strong>Salary:</strong> ${job.salary || 'Not specified'}</p>
+//       <button class="btn save-job-btn" data-job-id="${job.id}">Save Job</button>
+//     </div>
+//   `;
+// }
+
+const response = await fetch(
+    "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&offset=0",
+    {
+        headers: {
+            "X-RapidAPI-Key": "c7a338044dmsh69ffbce3033c61bp1bf90fjsn827485efc90a'",
+            "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com"
+        }
+    }
+);
+const data = await response.json();
+console.log(data.data);  // list of cities
+
+
+
+// Function to launch confetti
+export function launchConfetti(count = 30) {
+    const container = document.getElementById('confetti-container');
+
+    for (let i = 0; i < count; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+
+        // Random horizontal start position
+        confetti.style.left = `${Math.random() * window.innerWidth}px`;
+        confetti.style.background = `hsl(${Math.random() * 360}, 70%, 50%)`; // Optional: colorful confetti
+
+        // Random animation duration & delay
+        confetti.style.animationDuration = `${0.8 + Math.random() * 0.8}s`;
+        confetti.style.animationDelay = `${Math.random() * 0.5}s`;
+
+        container.appendChild(confetti);
+
+        // Remove confetti after animation
+        confetti.addEventListener('animationend', () => {
+            confetti.remove();
+
+        
+        });
+    }
+}
+
