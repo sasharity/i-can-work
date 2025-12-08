@@ -41,7 +41,7 @@ if (loadMoreBtn) {
 // LOAD STATIC JOBS FROM jobs.json
 async function loadJobsFromJSON() {
     try {
-        const response = await fetch("/public/data/jobs.json");
+        const response = await fetch("/data/jobs.json");
         const jsonJobs = await response.json();
         allJobs = [...allJobs, ...jsonJobs];
     } catch (error) {
