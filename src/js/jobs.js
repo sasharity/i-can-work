@@ -16,16 +16,26 @@ let currentPage = 1;
 
 
 // DOM ELEMENTS
-const jobListings = document.getElementById("job-listings");
-const skeletons = document.getElementById("job-skeletons");
-const loadMoreBtn = document.getElementById("loadMoreBtn");
+let jobListings;
+let skeletons;
+let loadMoreBtn;
 
-
-// WAIT FOR PAGE LOAD
 document.addEventListener("DOMContentLoaded", async () => {
+    // DOM elements now exist
+    jobListings = document.getElementById("job-listings");
+    skeletons = document.getElementById("job-skeletons");
+    loadMoreBtn = document.getElementById("loadMoreBtn");
+
     await loadJobsFromJSON();
     loadPostedJobs();
     renderJobs(allJobs);
+
+if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+            currentPage++;          // go to the next set of jobs
+            renderJobs(allJobs);    // re-render with more jobs
+        });
+    }
 });
 
 // LOAD STATIC JOBS FROM jobs.json
@@ -46,6 +56,7 @@ function loadPostedJobs() {
 }
 
 
+
 // RENDER JOB CARDS
 function renderJobs(jobsArray) {
     jobListings.innerHTML = "";
@@ -61,7 +72,16 @@ function renderJobs(jobsArray) {
                 <h3>${job.title}</h3>
                 <p>${job.company} — ${job.location}</p>
                 <p><strong>${job.salary}</strong></p>
-                <button class="btn" onclick="applyJob('${job.title}')">Apply Now</button>
+                <button class="apply-btn" data-title="${job.title}">Apply Now</button>
+
+                <button class="save-btn"
+                data-title="${job.title}"
+                data-company="${job.company}"
+                data-location="${job.location}"
+                data-salary="${job.salary}">
+                Save Job
+                </button>
+</div>
             `;
             jobListings.appendChild(card);
          });
@@ -79,12 +99,22 @@ function renderJobs(jobsArray) {
     }
 }
 
-// The load-more handler
-loadMoreBtn.addEventListener("click", () => {
-    currentPage++;          // go to the next set of jobs
-    renderJobs(allJobs);    // re-render with more jobs
-});
 
+// Save job to local storage and avoid duplicates
+function saveJob(job) {
+    const savedJobs = JSON.parse(localStorage.getItem("savedJobs")) || [];
+
+    // simple duplicate check (by title+company+location)
+    const exists = savedJobs.some(s => s.title === job.title && s.company === job.company && s.location === job.location);
+    if (!exists) {
+        savedJobs.push(job);
+        localStorage.setItem("savedJobs", JSON.stringify(savedJobs));
+        // Optionally notify user
+        alert("Job saved!");
+    } else {
+        alert("This job is already saved.");
+    }
+}
 
 // SEARCH FILTER
 window.filterJobs = function () {
@@ -99,19 +129,32 @@ window.filterJobs = function () {
 };
 
 // EVENT DELEGATION FOR APPLY BUTTONS
-jobListings.addEventListener("click", (e) => {
-    if (e.target && e.target.classList.contains("btn")) {
-        const jobTitle = e.target.dataset.title;
-        launchConfetti(100); // Confetti animation
+document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!target) return;
+
+    // Save job button
+    if (target.classList.contains("save-btn")) {
+        const job = {
+            title: target.dataset.title || "",
+            company: target.dataset.company || "",
+            location: target.dataset.location || "",
+            salary: target.dataset.salary || ""
+        };
+        saveJob(job);
+        return;
     }
-    window.applyJob = function (title) {
+
+    // Apply button
+    if (target.classList.contains("apply-btn")) {
+        const title = target.dataset.title || "this job";
+        // trigger confetti (if available) and show alert
+        try { launchConfetti(50); } catch (err) { }
         alert(`You applied for: ${title}`);
-    };
+        return;
+    }
 
 });
-
-
-
 
 
 

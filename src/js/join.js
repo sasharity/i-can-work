@@ -2,7 +2,7 @@ import { loadHeaderFooter } from "./utils.js";
 import { launchConfetti } from "./main.js";
 
 loadHeaderFooter(); // Load site header/footer
-launchConfetti(); //To lauch confetti after user applies for job
+
 
 const form = document.getElementById("joinForm");
 const feedback = document.getElementById("formFeedback");
@@ -43,6 +43,19 @@ form.addEventListener("submit", (e) => {
 
     feedback.style.color = "green";
     feedback.textContent = "Form submitted successfully!";
+    launchConfetti(); //To lauch confetti after user joins the platform
 
-    
+    // SAVE USER TO LOCAL STORAGE
+    const userData = {
+        fullName,
+        email,
+        phone,
+        role,
+        isLoggedIn: true
+    };
+
+    localStorage.setItem("user", JSON.stringify(userData));
+
+    // REDIRECT TO DASHBOARD
+    window.location.href = "/pages/users.html";
 });

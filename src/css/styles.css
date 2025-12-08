@@ -239,8 +239,8 @@ textarea {
   box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15);
 }
 
-.btn {
-  background: var(--green);
+.apply-btn {
+  background: green;
   color: white;
   padding: .8rem 1.4rem;
   border-radius: var(--radius-md);
@@ -249,6 +249,17 @@ textarea {
   cursor: pointer;
   transition: .2s ease;
 }
+
+.save-btn {
+    background: var(--green);
+    color: white;
+    padding: .8rem 1.4rem;
+    border-radius: var(--radius-md);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: .2s ease;
+  }
 
 .btn:hover {
   opacity: .9;

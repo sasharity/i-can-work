@@ -1,12 +1,19 @@
 import { loadHeaderFooter } from "./utils.js";
 loadHeaderFooter();
 
-// Get stored user OR create a demo user if none exists yet
-let user = JSON.parse(localStorage.getItem("user")) || {
-    username: "Guest User",
-    role: "worker", // or "employer"
-    isLoggedIn: true
-};
+// // Get stored user OR create a demo user if none exists yet. This creates a fake user only to test run. I will get user from local storage after i create the join page
+// let user = JSON.parse(localStorage.getItem("user")) || {
+//     username: "Guest User",
+//     role: "worker", // or "employer"
+//     isLoggedIn: true
+// };
+
+//THis calls the user after the join page using their details.
+let user = JSON.parse(localStorage.getItem("user"));
+
+if (!user) {
+  window.location.href = "/pages/join.html";
+}
 
 // Save demo user if not present
 localStorage.setItem("user", JSON.stringify(user));
@@ -15,7 +22,7 @@ localStorage.setItem("user", JSON.stringify(user));
 const userCard = document.getElementById("user-info");
 userCard.innerHTML = `
   <div class="card">
-    <h3>${user.username}</h3>
+    <h3>${user.fullName}</h3>
     <p><strong>Role:</strong> ${user.role}</p>
     <p><strong>Status:</strong> ${user.isLoggedIn ? "Logged In" : "Logged Out"}</p>
     <button id="logoutBtn" class="btn">Log Out</button>
@@ -42,6 +49,7 @@ if (savedJobs.length === 0) {
         <h4>${job.title}</h4>
         <p>${job.company}</p>
         <p>${job.location}</p>
+        
       </div>
     `)
         .join("");
