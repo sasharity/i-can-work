@@ -2,6 +2,7 @@ import { loadHeaderFooter } from "./utils.js";
 import { launchConfetti } from "./main.js";
 loadHeaderFooter();
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const postJobForm = document.getElementById("postJobForm");
     const successMessage = document.getElementById("successMessage");

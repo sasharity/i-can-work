@@ -19,6 +19,7 @@ const headerTemplate = `
         <img src="/logo-full.svg" alt="I Can Work Hub Logo" width="220" height="70">
     </a>
 
+
     <nav class="nav" role="navigation" aria-label="Main navigation">
         <a href="/pages/jobs.html">Jobs</a>
         <a href="/pages/post_jobs.html">Post a Job</a>
@@ -27,8 +28,11 @@ const headerTemplate = `
         <a href="/pages/join.html">Join</a>
     </nav>
 </div>
+
 </div>
 `;
+
+
 
 const footerTemplate = `
 <div class="container">
@@ -39,4 +43,6 @@ const footerTemplate = `
 export function loadHeaderFooter() {
     document.querySelector("#site-header").innerHTML = headerTemplate;
     document.querySelector("#site-footer").innerHTML = footerTemplate;
+
+        
 }

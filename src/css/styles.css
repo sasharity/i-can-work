@@ -239,7 +239,8 @@ textarea {
   box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15);
 }
 
-.apply-btn {
+
+.btn, .apply-btn {
   background: green;
   color: white;
   padding: .8rem 1.4rem;
@@ -525,7 +526,7 @@ footer {
 /* Because this web app can be used on any type of device, the following CSS lines will be added for responsiveness and accessibility. It will also implement mobile, tab and desktop views */
 
 
-/* ---------- MOBILE GLOBAL FIXES ---------- */
+/*  MOBILE GLOBAL  */
 @media (max-width: 600px) {
   .container {
     padding: 0 1rem;
@@ -567,7 +568,7 @@ footer {
   }
 }
 
-/* ---------- TABLET RESPONSIVENESS ---------- */
+/*  TABLET RESPONSIVENESS  */
 @media (min-width: 600px) and (max-width: 900px) {
   .header-inner {
     padding: 0 .5rem;
@@ -592,7 +593,7 @@ footer {
   }
 }
 
-/* ---------- DESKTOP MID-RANGE ---------- */
+/*  DESKTOP MID-RANGE  */
 @media (min-width: 900px) and (max-width: 1400px) {
   .hero {
     padding: 5rem 2rem;
@@ -610,3 +611,4 @@ footer {
     max-width: 1200px;
   }
 }
+

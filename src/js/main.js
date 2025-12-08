@@ -4,6 +4,8 @@ import { loadHeaderFooter } from "./utils.js";
 loadHeaderFooter();
 
 
+
+
 // DOMContentLoaded ensures DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
     const path = window.location.pathname;
@@ -286,4 +288,5 @@ export function launchConfetti(count = 30) {
         });
     }
 }
+
 
